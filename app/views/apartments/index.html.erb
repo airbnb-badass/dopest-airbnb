@@ -1,10 +1,23 @@
 
 <h1>Apartments list :</h1>
 
-<ul>
-  <% @apartments.each do |apartment| %>
-    <li><%= apartment.title %>
-       --
-    <%= apartment.user.email %></li>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>City</th>
+      <th>Price</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @apartments.each do |apartment| %>
+  <tr>
+    <td><%= link_to apartment.title, apartment_path(apartment)%></td>
+    <td><%= apartment.city %></td>
+    <td><%= apartment.price %></td>
+    <td><%= apartment.user.email %></td>
+  </tr>
   <% end %>
-</ul>
+  </tbody>
+</table>

@@ -1,0 +1,16 @@
+<h1><%= @apartment.title %></h1>
+
+<h2>Apartment details :</h2>
+
+<p>description : <%= @apartment.description %></p>
+<p>adress : <%= @apartment.address %></p>
+<p>zipcode : <%= @apartment.zipcode %></p>
+<p>city : <%= @apartment.city %></p>
+<p>country : <%= @apartment.country %></p>
+<p>price / night : <%= @apartment.price %></p>
+
+<h2>Owner :</h2>
+
+<p>Email : <%= @owner.email %></p>
+
+<%= link_to 'All Apartments' , apartments_path %>
