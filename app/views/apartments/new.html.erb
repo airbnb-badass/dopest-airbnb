@@ -1,0 +1,36 @@
+<h1>List your apartment :</h1>
+
+<%= form_for(@apartment) do |t| %>
+<p>
+  <%= t.label :title %>
+  <%= t.text_field :title %>
+</p>
+<p>
+  <%= t.label :description %>
+  <%= t.text_field :description %>
+</p>
+<p>
+  <%= t.label :address %>
+  <%= t.text_field :address %>
+</p>
+<p>
+  <%= t.label :city %>
+  <%= t.text_field :city %>
+</p>
+<p>
+  <%= t.label :zipcode %>
+  <%= t.text_field :zipcode %>
+</p>
+<p>
+  <%= t.label :country %>
+  <%= t.text_field :country %>
+</p>
+<p>
+  <%= t.label :price %>
+  <%= t.number_field :price %>
+</p>
+<p>
+  <%= t.submit %>
+</p>
+
+<% end %>
