@@ -1,0 +1,10 @@
+
+<h1>Apartments list :</h1>
+
+<ul>
+  <% @apartments.each do |apartment| %>
+    <li><%= apartment.title %>
+       --
+    <%= apartment.user.email %></li>
+  <% end %>
+</ul>
