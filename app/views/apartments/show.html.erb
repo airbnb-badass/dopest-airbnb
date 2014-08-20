@@ -1,3 +1,5 @@
+
+
 <h1><%= @apartment.title %></h1>
 
 <h2>Apartment details :</h2>
@@ -9,9 +11,13 @@
 <p>country : <%= @apartment.country %></p>
 <p>price / night : <%= @apartment.price %></p>
 
-<% @apartment.pictures.each do |picture| %>
-  <p><%= image_tag picture.picture.url(:medium) %></p>
-<% end %>
+<div class="carousel-wrapper">
+  <div class="carousel">
+    <% @apartment.pictures.each do |picture| %>
+      <div><%= image_tag picture.picture.url(:medium) %></div>
+    <% end %>
+  </div>
+</div>
 
 
 <h2>Owner :</h2>
@@ -19,3 +25,5 @@
 <p>Email : <%= @owner.email %></p>
 
 <%= link_to 'Back to the apartments list' , apartments_path %>
+
+
