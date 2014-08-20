@@ -8,7 +8,11 @@
 <p>city : <%= @apartment.city %></p>
 <p>country : <%= @apartment.country %></p>
 <p>price / night : <%= @apartment.price %></p>
-<p><%= image_tag @apartment.picture.url(:medium) %></p>
+
+<% @apartment.pictures.each do |picture| %>
+  <p><%= image_tag picture.picture.url(:medium) %></p>
+<% end %>
+
 
 <h2>Owner :</h2>
 

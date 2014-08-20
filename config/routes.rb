@@ -4,7 +4,11 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :apartments
+  resources :apartments do
+    resources :pictures
+  end
+
+
 
   get '/profile', :to => "profile#show"
 
