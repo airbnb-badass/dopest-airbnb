@@ -12,6 +12,16 @@ class PicturesController < ApplicationController
     redirect_to apartment_pictures_path
   end
 
+  def destroy
+    @apartment = Apartment.find(params[:apartment_id])
+    @picture = @apartment.pictures.find(params[:id])
+    @picture.destroy
+    redirect_to apartment_pictures_path
+  end
+
+
+
+
   private
 
   def picture_params

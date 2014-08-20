@@ -4,7 +4,7 @@
 
 
 <% @apartment.pictures.each do |picture| %>
-  <p><%= image_tag picture.picture.url(:medium) %></p>
+  <p><%= image_tag picture.picture.url(:medium) %> <%= link_to 'Delete', [picture.apartment, picture], method: :delete%></p>
 <% end %>
 
 
