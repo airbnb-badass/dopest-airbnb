@@ -1,0 +1,22 @@
+<h1>Photos list</h1>
+
+<p>Nombre de photos : <%= @pictures.size %></p>
+
+
+<% @apartment.pictures.each do |picture| %>
+  <p><%= image_tag picture.picture.url(:medium) %></p>
+<% end %>
+
+
+
+<p>Ajouter une photo :</p>
+<%= form_for [@apartment, @picture], html: { multipart: true } do |t| %>
+  <p>
+    <%= t.label :picture %>
+    <%= t.file_field :picture %>
+  </p>
+<p>
+  <%= t.submit %>
+</p>
+
+<% end %>

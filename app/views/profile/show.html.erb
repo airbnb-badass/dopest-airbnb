@@ -15,6 +15,7 @@
         <th>Title</th>
         <th>Edit</th>
         <th>Destroy</th>
+        <th>Photos</th>
       </tr>
     </thead>
 
@@ -25,6 +26,7 @@
         <td><%= link_to apartment.title, apartment_path(apartment)%></td>
         <td><%= link_to "edit", edit_apartment_path(apartment)%></td>
         <td> <%= link_to "destroy", apartment_path(apartment), method: :delete%></td>
+        <td> <%= link_to "manage photos", apartment_pictures_path(apartment)%></td>
       </tr>
     <% end %>
 
