@@ -1,0 +1,37 @@
+<h1>Your profile :</h1>
+
+<p>Your email is : <%= current_user.email %></p>
+
+<%= link_to "Edit profile", edit_user_registration_path %>
+
+<h2>Your apartments :</h2>
+
+<% if current_user.apartments.size > 0 %>
+
+  <table class="table">
+
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Edit</th>
+        <th>Destroy</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+  <% current_user.apartments.each do |apartment| %>
+      <tr>
+        <td><%= link_to apartment.title, apartment_path(apartment)%></td>
+        <td><%= link_to "edit", edit_apartment_path(apartment)%></td>
+        <td> <%= link_to "destroy", apartment_path(apartment), method: :delete%></td>
+      </tr>
+    <% end %>
+
+    </tbody>
+
+  </table>
+
+<% else %>
+You don't have any apartment ?! <%= link_to 'list it now' , new_apartment_path %>
+<% end %>

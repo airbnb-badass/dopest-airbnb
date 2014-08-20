@@ -1,0 +1,41 @@
+<h1>Edit your apartment :</h1>
+
+<%= form_for @apartment, html: { multipart: true } do |t| %>
+<p>
+  <%= t.label :title %>
+  <%= t.text_field :title %>
+</p>
+<p>
+  <%= t.label :description %>
+  <%= t.text_field :description %>
+</p>
+<p>
+  <%= t.label :address %>
+  <%= t.text_field :address %>
+</p>
+<p>
+  <%= t.label :city %>
+  <%= t.text_field :city %>
+</p>
+<p>
+  <%= t.label :zipcode %>
+  <%= t.text_field :zipcode %>
+</p>
+<p>
+  <%= t.label :country %>
+  <%= t.text_field :country %>
+</p>
+<p>
+  <%= t.label :price %>
+  <%= t.number_field :price %>
+</p>
+<p>
+    <%= t.label :picture %>
+    <%= t.file_field :picture %>
+  </p>
+<p>
+  <%= t.submit %>
+</p>
+<% end %>
+
+<%= link_to 'You changed your mind ? Go back to your profile' , profile_path %>
