@@ -1,37 +1,43 @@
-<h1>Edit your apartment :</h1>
+<div class="well">
+  <h1>Edit your apartment</h1>
+</div>
 
-<%= form_for @apartment, html: { multipart: true } do |t| %>
-<p>
-  <%= t.label :title %>
-  <%= t.text_field :title %>
-</p>
-<p>
-  <%= t.label :description %>
-  <%= t.text_field :description %>
-</p>
-<p>
-  <%= t.label :address %>
-  <%= t.text_field :address %>
-</p>
-<p>
-  <%= t.label :city %>
-  <%= t.text_field :city %>
-</p>
-<p>
-  <%= t.label :zipcode %>
-  <%= t.text_field :zipcode %>
-</p>
-<p>
-  <%= t.label :country %>
-  <%= t.text_field :country %>
-</p>
-<p>
-  <%= t.label :price %>
-  <%= t.number_field :price %>
-</p>
-<p>
-  <%= t.submit %>
-</p>
-<% end %>
-
-<%= link_to 'You changed your mind ? Go back to your profile' , profile_path %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6">
+        <%= form_for @apartment, html: { multipart: true} do |f| %>
+          <div class="form-group">
+            <%= f.label :title %>
+            <%= f.text_field :title, class:"form-control", placeholder:"ex : Beautiful 40sqm studio in the Bastille area"%>
+          </div>
+          <div class="form-group">
+            <%= f.label :description %>
+            <%= f.text_area :description, class:"form-control", placeholder:"ex : 2 bedrooms. Kitchen fully equiped."%>
+          </div>
+          <div class="form-group">
+            <%= f.label :address %>
+            <%= f.text_area :address, class:"form-control", placeholder:"ex : 34, rue du Petit Musc"%>
+          </div>
+          <div class="form-group">
+            <%= f.label :city %>
+            <%= f.text_area :city, class:"form-control", placeholder:"ex : Paris"%>
+          </div>
+          <div class="form-group">
+            <%= f.label :zipcode %>
+            <%= f.text_area :zipcode, class:"form-control", placeholder:"ex : 750005"%>
+          </div>
+          <div class="form-group">
+            <%= f.label :country %>
+            <%= f.text_area :country, class:"form-control", placeholder:"ex : France"%>
+          </div>
+          <div class="form-group">
+            <%= f.label :price %>
+            <%= f.text_area :price, class:"form-control", placeholder:"ex : 110"%>
+          </div>
+          <%= f.submit "Submit", class: "btn btn-primary"%>
+        <% end %>
+        <br>
+        <%= link_to 'Cancel', apartments_path %>
+    </div>
+  </div>
+</div>
