@@ -32,3 +32,26 @@
 
   <%= link_to 'Back to the apartments list' , apartments_path %>
 </div>
+
+--------------------------------
+
+<h2>Ask for booking:</h2>
+<%= form_for([@apartment, @apartment.bookings.build]) do |b| %>
+
+  <%= b.label :checkin %>
+  <%= b.date_field :checkin %>
+
+  <%= b.label :checkout %>
+  <%= b.date_field :checkout %>
+
+  <%= b.label :guests %>
+  <%= b.number_field :guests %>
+
+  <%= b.submit %>
+
+<% end %>
+
+--------------------------------
+
+
+controllers et views pour afficher les demandes de bookings au proprio et au renter.
