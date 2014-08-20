@@ -1,9 +1,11 @@
 class PicturesController < ApplicationController
 
   def index
-    @pictures = Picture.all
-    @picture = Picture.new
     @apartment = Apartment.find(params[:apartment_id])
+
+    @pictures = @apartment.pictures.all
+    @picture = Picture.new
+
   end
 
   def create
