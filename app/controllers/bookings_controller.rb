@@ -11,6 +11,8 @@ def create
   @booking.status = "pending"
   @booking.user_id = current_user.id
   @booking.save
+  @user = @booking.apartment.user
+  UserMailer.new_booking_message(@user).deliver
   redirect_to apartment_path(@apartment)
 end
 
