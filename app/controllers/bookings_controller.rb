@@ -18,8 +18,11 @@ def validate
   @booking = Booking.find(params[:id])
   @booking.status = "validated"
   @booking.save
+  @user = @booking.user
+  UserMailer.validation_message(@user).deliver
   redirect_to bookings_path
 end
+
 
 def cancel
   @booking = Booking.find(params[:id])
