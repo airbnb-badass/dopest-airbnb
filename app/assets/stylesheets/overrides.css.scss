@@ -1,0 +1,19 @@
+@import "bootstrap";
+
+body { padding-top: 55px; } // Padding to make body start after the 50px nabar
+
+// Start Navbar styling
+.navbar-default { background-color: transparent; color: blue}
+.navbar-nav { margin: 0px }
+#logo-navbar {
+    padding:10px 5px;
+    display:inline-block;}
+
+.navbar-nav.navbar-right:last-child { margin: auto; }
+// End Navbar styling
+
+.navbar .in .nav li {
+  display: block;
+  float: none;
+  width:100%;
+}

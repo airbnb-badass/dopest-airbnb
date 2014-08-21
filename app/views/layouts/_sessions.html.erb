@@ -1,8 +1,8 @@
 <% if user_signed_in? %>
   Hola <%= current_user.email %> !
-  <%= link_to 'Check your profile', profile_path %>
-  <%= link_to 'Sign out', destroy_user_session_path, method: 'delete' %>
+  <li class="sign-in"><%= link_to 'Check your profile', profile_path %></li>
+  <li class="sign-in"><%= link_to 'Sign out', destroy_user_session_path, method: 'delete' %></li>
 <% else %>
-  <%= link_to 'Sign up', new_user_registration_path %>
-  <%= link_to 'Sign in', new_user_session_path %>
+  <li class="sign-in"><%= link_to 'Sign in', new_user_session_path %></li>
+  <li class="sign-in"><%= link_to 'Sign up', new_user_registration_path %></li>
 <% end %>

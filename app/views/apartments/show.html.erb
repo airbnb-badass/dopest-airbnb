@@ -1,29 +1,34 @@
-
-
-<h1><%= @apartment.title %></h1>
-
-<h2>Apartment details :</h2>
-
-<p>description : <%= @apartment.description %></p>
-<p>adress : <%= @apartment.address %></p>
-<p>zipcode : <%= @apartment.zipcode %></p>
-<p>city : <%= @apartment.city %></p>
-<p>country : <%= @apartment.country %></p>
-<p>price / night : <%= @apartment.price %></p>
-
-<div class="carousel-wrapper">
-  <div class="carousel">
-    <% @apartment.pictures.each do |picture| %>
-      <div><%= image_tag picture.picture.url(:medium) %></div>
-    <% end %>
-  </div>
+<div class="well">
+  <h1><%= @apartment.title %></h1>
+  <%-# add a restriction so that only the owner can edit the data -%>
+  <%= link_to 'edit', edit_apartment_path %>
 </div>
 
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6">
 
-<h2>Owner :</h2>
+      </h2>Apartment's details :</h2>
 
-<p>Email : <%= @owner.email %></p>
+      <p>description : <%= @apartment.description %></p>
+      <p>adress : <%= @apartment.address %></p>
+      <p>zipcode : <%= @apartment.zipcode %></p>
+      <p>city : <%= @apartment.city %></p>
+      <p>country : <%= @apartment.country %></p>
+      <p>price / night : <%= @apartment.price %></p>
 
-<%= link_to 'Back to the apartments list' , apartments_path %>
+      <div class="carousel-wrapper">
+        <div class="carousel">
+          <% @apartment.pictures.each do |picture| %>
+            <div><%= image_tag picture.picture.url(:medium) %></div>
+          <% end %>
+        </div>
+      </div>
 
+      </h2>Owner :</h2>
 
+      <p>e-mail :<%= @owner.email %></p>
+  </div>
+
+  <%= link_to 'Back to the apartments list' , apartments_path %>
+</div>
