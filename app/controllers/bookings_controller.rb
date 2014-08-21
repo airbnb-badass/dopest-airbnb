@@ -1,9 +1,9 @@
 class BookingsController < ApplicationController
 
-def index
-  @apartment = Apartment.find(params[:apartment_id])
-  @bookings = Booking.find(params[:apartment_id])
-end
+# def index
+  # @apartment = Apartment.find(params[:apartment_id])
+  # @bookings = Booking.find(params[:apartment_id])
+# end
 
 def create
   @apartment = Apartment.find(params[:apartment_id])
