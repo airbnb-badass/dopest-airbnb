@@ -1,0 +1,23 @@
+<table class="table">
+
+  <thead>
+    <tr>
+      <th>Apartment</th>
+      <th>Checkin</th>
+      <th>Checkout</th>
+      <th>Guests</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+  <% @apartment.bookings.each do |booking| %>
+    <tr>
+      <td><%= booking.apartment_id %></td>
+      <td><%= booking.checkin %></td>
+      <td><%= booking.guests %></td>
+    </tr>
+  <% end %>
+
+  </tbody>
+</table>
