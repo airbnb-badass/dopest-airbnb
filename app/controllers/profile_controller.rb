@@ -4,7 +4,6 @@ class ProfileController < ApplicationController
   end
 
   def bookings
-
   end
 
 end

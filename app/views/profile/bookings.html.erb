@@ -21,6 +21,13 @@
       <td><%= booking.checkout %></td>
       <td><%= booking.guests %></td>
       <td><%= booking.status %></td>
+      <% if booking.status == "pending" %>
+        <td><%= link_to 'validate', validate_booking_path(booking), method: :patch, class: 'btn btn-success' %></td>
+      <% elsif booking.status == "validated" %>
+        <td><%= link_to 'cancel', cancel_booking_path(booking), method: :patch, class: 'btn btn-danger' %></td>
+        <% elsif booking.status == "canceled" %>
+        <td><%= link_to 'validate', validate_booking_path(booking), method: :patch, class: 'btn btn-success' %></td>
+      <% end %>
     </tr>
   <% end %>
 

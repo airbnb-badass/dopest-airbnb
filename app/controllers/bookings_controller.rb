@@ -14,6 +14,20 @@ def create
   redirect_to apartment_path(@apartment)
 end
 
+def validate
+  @booking = Booking.find(params[:id])
+  @booking.status = "validated"
+  @booking.save
+  redirect_to bookings_path
+end
+
+def cancel
+  @booking = Booking.find(params[:id])
+  @booking.status = "canceled"
+  @booking.save
+  redirect_to bookings_path
+end
+
 private
 
 def booking_params

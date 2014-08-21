@@ -9,10 +9,13 @@ Rails.application.routes.draw do
     resources :bookings
   end
 
+  resources :bookings, only: [] do
+    patch :validate, on: :member
+    patch :cancel, on: :member
+  end
 
 
   get '/profile', :to => "profile#show"
 
   get '/bookings', :to => "profile#bookings"
-
 end
