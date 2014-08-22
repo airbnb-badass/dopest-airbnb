@@ -32,7 +32,7 @@
           </div>
           <div class="form-group">
             <%= f.label :price %>
-            <%= f.text_area :price, class:"form-control", placeholder:"ex : 110"%>
+            <%= f.number_field :price, class:"form-control", placeholder:"ex : 110"%>
           </div>
           <%= f.submit "Submit", class: "btn btn-primary"%>
         <% end %>

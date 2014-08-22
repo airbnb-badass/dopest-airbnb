@@ -1,21 +1,13 @@
 <div class="well">
-  <h1><%= @apartment.title %></h1>
+  <h1><%= @apartment.title %> - <%= @apartment.price %>$ / night</h1>
   <%-# add a restriction so that only the owner can edit the data -%>
-  <%= link_to 'edit', edit_apartment_path %>
 </div>
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-6">
 
-      </h2>Apartment's details :</h2>
-
-      <p>description : <%= @apartment.description %></p>
-      <p>adress : <%= @apartment.address %></p>
-      <p>zipcode : <%= @apartment.zipcode %></p>
-      <p>city : <%= @apartment.city %></p>
-      <p>country : <%= @apartment.country %></p>
-      <p>price / night : <%= @apartment.price %></p>
+   <div class="col-xs-4">
+    <h3>Photos</h3>
 
       <div class="carousel-wrapper">
         <div class="carousel">
@@ -24,34 +16,45 @@
           <% end %>
         </div>
       </div>
+    </div>
 
-      </h2>Owner :</h2>
 
-      <p>e-mail :<%= @owner.email %></p>
+    <div class="col-xs-4">
+
+      <h3>Details</h3>
+
+      <p><strong>Description : </strong><%= @apartment.description %></p>
+      <p><strong>Adress : </strong><%= @apartment.address %></p>
+      <p><strong>Zipcode : </strong><%= @apartment.zipcode %></p>
+      <p><strong>City : </strong><%= @apartment.city %></p>
+      <p><strong>Country : </strong><%= @apartment.country %></p>
+
+    </div>
+
+    <div class="col-xs-4">
+
+            <h3>Booking</h3>
+
+        <p><strong>Owner : </strong><%= @owner.email %></p>
+        <%= form_for([@apartment, @apartment.bookings.build]) do |b| %>
+
+          <p><%= b.label :checkin %>
+          <%= b.date_field :checkin %></p>
+
+          <p><%= b.label :checkout %>
+          <%= b.date_field :checkout %></p>
+
+          <p><%= b.label :guests %>
+          <%= b.number_field :guests %></p>
+
+          <%= b.submit%>
+
+        <% end %>
+      </div>
   </div>
-
-  <%= link_to 'Back to the apartments list' , apartments_path %>
 </div>
 
---------------------------------
-
-<h2>Ask for booking:</h2>
-<%= form_for([@apartment, @apartment.bookings.build]) do |b| %>
-
-  <%= b.label :checkin %>
-  <%= b.date_field :checkin %>
-
-  <%= b.label :checkout %>
-  <%= b.date_field :checkout %>
-
-  <%= b.label :guests %>
-  <%= b.number_field :guests %>
-
-  <%= b.submit %>
-
-<% end %>
-
---------------------------------
 
 
-controllers et views pour afficher les demandes de bookings au proprio et au renter.
+
+<!-- controllers et views pour afficher les demandes de bookings au proprio et au renter. -->
