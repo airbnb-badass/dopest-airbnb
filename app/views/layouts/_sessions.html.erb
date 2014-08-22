@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-  Hola <%= current_user.email %> !
+  <li class="sign-in-mail">Hi <%= current_user.email %> !</li>
   <li class="sign-in"><%= link_to 'Check your profile', profile_path %></li>
   <li class="sign-in"><%= link_to 'Sign out', destroy_user_session_path, method: 'delete' %></li>
 <% else %>

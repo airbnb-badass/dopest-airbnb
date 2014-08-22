@@ -19,7 +19,6 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><%= link_to 'Home', root_path %></li>
             <li><%= link_to 'Apartments listing', apartments_path %></li>
             <li><%= link_to 'List an apartment', new_apartment_path %></li>
           </ul>
@@ -33,7 +32,11 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <%= yield %>
+    <div class="container">
+      <div class="row">
+        <%= yield %>
+      </div>
+    </div>
 
   </div>
 

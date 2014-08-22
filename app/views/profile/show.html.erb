@@ -1,10 +1,12 @@
-<h1>Your profile :</h1>
+<div class="well">
+  <h1>Your profile</h1>
+</div>
 
-<p>Your email is : <%= current_user.email %></p>
+<!-- <p>Your email is : <%= current_user.email %></p> -->
 
-<%= link_to "Edit profile", edit_user_registration_path %>
+<%= link_to "Edit profile", edit_user_registration_path, class: "btn btn-default" %>
 
-<h2>Your apartments :</h2>
+<h3>Your apartments</h3>
 
 <% if current_user.apartments.size > 0 %>
 
@@ -35,11 +37,11 @@
   </table>
 
 <% else %>
-You don't have any apartment ?! <%= link_to 'list it now' , new_apartment_path %>
+You don't have any apartment ?!<br><%= link_to 'list it now' , new_apartment_path, class: "btn btn-default" %>
 <% end %>
 
 
-<h2>3 lasts bookings on your apartments :</h2>
+<h3>Last bookings on your apartments</h2>
 
 <table class="table">
 
@@ -68,9 +70,9 @@ You don't have any apartment ?! <%= link_to 'list it now' , new_apartment_path %
   </tbody>
 </table>
 
-<%= link_to 'View all bookings on your apartments' , bookings_path %>
+<%= link_to 'View all bookings on your apartments' , bookings_path, class: "btn btn-default" %>
 
-<h2>My bookings for my next holidays :</h2>
+<h3>My bookings for my next holidays</h3>
 <table class="table">
 
     <thead>

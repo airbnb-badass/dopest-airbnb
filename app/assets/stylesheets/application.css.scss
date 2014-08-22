@@ -15,6 +15,10 @@
  */
 
 
+body {
+  background: image-url('New-York-City-Skyline-15.jpg');
+}
+
 .carousel-wrapper {
   width: 300px;
   margin: 0px 40px;
@@ -47,4 +51,15 @@
 
 .navbar-default .navbar-nav li a:hover{
     color: red;
+}
+
+.sign-in-mail{
+  padding-top: 15px;
+  color: white;
+}
+
+.well {
+  background-color: #AAC4FF;
+  border: none;
+
 }
