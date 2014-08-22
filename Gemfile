@@ -5,6 +5,7 @@ ruby '2.1.2'
 gem 'devise'
 
 gem 'rails_admin'
+gem "cancancan"
 
 gem 'figaro'
 gem 'paperclip'

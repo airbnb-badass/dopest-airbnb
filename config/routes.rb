@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   get '/profile', :to => "profile#show"
 
   get '/bookings', :to => "profile#bookings"
+
 end
