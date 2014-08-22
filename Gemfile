@@ -4,6 +4,8 @@ ruby '2.1.2'
 
 gem 'devise'
 
+gem 'rails_admin'
+
 gem 'figaro'
 gem 'paperclip'
 gem 'aws-sdk'
