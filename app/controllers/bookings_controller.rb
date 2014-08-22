@@ -30,6 +30,8 @@ def cancel
   @booking = Booking.find(params[:id])
   @booking.status = "canceled"
   @booking.save
+  @user = @booking.user
+  UserMailer.cancel_message(@user).deliver
   redirect_to bookings_path
 end
 

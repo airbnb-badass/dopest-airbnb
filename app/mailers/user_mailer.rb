@@ -6,6 +6,11 @@ class UserMailer < ActionMailer::Base
     mail(to: @user.email, subject: 'Your booking has been validated !')
   end
 
+  def cancel_message(user)
+    @user = user
+    mail(to: @user.email, subject: 'Your booking has been canceled !')
+  end
+
   def new_booking_message(user)
     @user = user
     mail(to: @user.email, subject: 'You have a new booking on your apartment !')
